@@ -1,0 +1,294 @@
+/* Landscape phones and smaller */
+@media screen and (min-width: 320px) and (max-width: 480px) {
+
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        color: #6A707B;
+    }
+
+.content{
+    width: 100vw;
+    height: 100vh;
+    &-right{
+        width: 100%;
+        height: 100vh;
+        background: url('../img/image_summer_mob.png') no-repeat 0 66px;
+        nav{
+            width: 100%;
+            height: 66px;
+            // background-color: #FFF;
+            background: url('../img/icons/ic_pineapple.svg') no-repeat 20px  10px #fff;
+            padding: 21px 20px 21px 149px;
+            .logo{
+                display: none;
+            }
+            .links{
+                display: flex;
+                width: 206px;
+                height: 24px;
+                // margin: 21px 20px 21px 149px;
+                // margin: 4.3% 4.1% 4.3% 31%;
+                // display: none;
+                li{
+                    display: inline-block;
+                    margin-left: 20px;
+                    &:first-child{
+                        margin-left: 0;
+                    }
+                }
+                a{
+                    color: #6A707B;
+                    line-height: 24px;
+                }
+            }
+        }
+        .info{
+            .info-header{
+                width: 400px;
+                margin: 234px 140px 251px;
+                h1{
+                    font-family: Georgia, 'Times New Roman', Times, serif;
+                    font-size: 32px;
+                    line-height: 44px;
+                    color: #131821;
+                    margin-bottom: 15px;
+                }
+                p{
+                    line-height: 28px;
+                }
+            }
+        }
+    }
+}
+
+
+
+// .content{
+//         display: block;
+//         width: 480px;
+//         height: auto;
+//         &-right{
+//             max-width: 480px;
+//             background: url('../img/image_summer.jpg') no-repeat;
+//             nav{
+//                 display: flex;
+//                 position: absolute;
+//                 top: 0;
+//                 left: 0;
+//                 margin: 0;
+//                 width: 375px;
+//                 height: 66px;
+//                 background-color: #fff;
+//                 .logo{
+//                     width: 10%;
+//                     margin-right: 0;
+//                     &-icon img{
+//                         position: absolute;
+//                         top: 100px;
+//                         left: 0;
+//                     }
+//                     &-text{
+//                         display:none;
+//                         margin: 20px 0 4px 40px;
+//                     }
+//                 }
+//                 .links{
+//                     width: 249px;
+//                     li{
+//                         display: inline-block;
+//                         margin: 14px 0 0 26px;
+//                         &:first-child{
+//                             margin-left: 0;
+//                         }
+//                         a{
+//                             color: #6A707B;
+//                             line-height: 24px;
+//                         }
+//                     }
+//                 }
+//             }
+//             .info{
+//                 .info-header{
+//                     width: 400px;
+//                     margin: 234px 140px 251px;
+//                     h1{
+//                         font-family: Georgia, 'Times New Roman', Times, serif;
+//                         font-size: 32px;
+//                         line-height: 44px;
+//                         color: #131821;
+//                         margin-bottom: 15px;
+//                     }
+//                     p{
+//                         line-height: 28px;
+//                     }
+//                 }
+//                 .form{
+//                     position: absolute;
+//                     left: 100px;
+//                     top: 539px;
+//                     .email{
+//                         display: flex;
+//                         position: absolute;
+//                         top: 0;
+//                         left: 0;
+//                         width: 663px;
+//                         height: 70px;
+//                         background-color: #fff;
+//                         .border{
+//                             width: 4px;
+//                             height: 70px;
+//                             background-color: #4066A5;
+//                         }
+//                         input[type=text]{
+//                             display: block;
+//                             width: 100%;
+//                             height: 70px;
+//                             padding-left: 40px;
+//                             background: url('../img/icons/ic_arrow.svg') no-repeat 94% 50%;
+//                             appearance: none;
+//                             border-top: 1px solid #E3E3E4;
+//                             border-right: 1px solid #E3E3E4;
+//                             border-bottom: 1px solid #E3E3E4;
+//                             &::placeholder{
+//                                 line-height: 24px;
+//                                 font-size: 16px;
+//                             }
+//                             &:focus{
+//                                 border: 1px solid #4066A5;
+//                                 background: url('../img/icons/ic_arrow_focus.svg') no-repeat 94% 50%;
+//                             }
+//                         }
+//                         input[type=submit]{
+//                             display: block;
+//                             position: absolute;
+//                             top: 0;
+//                             left: 579px;
+//                             width: 83px;
+//                             height: 70px;
+//                             cursor:pointer;
+//                             background-color: transparent;
+//                         }
+//                     }
+//                     .error{
+//                         position: absolute;
+//                         top: 75px;
+//                         left: 0;
+//                         color: #CC0000;
+//                     }
+//                     &-checkbox{
+//                         margin: 124px 0 0 36px;
+//                         input[type=checkbox]{
+//                             vertical-align: top;
+//                             margin-top: 1px;
+//                             margin-right: 15px;
+//                             width: 26px;
+//                             height: 26px;
+//                         }
+//                         span{
+//                             vertical-align: middle;
+//                             line-height: 28px;
+//                             a{
+//                                 font-size: 16px;
+//                                 text-decoration: underline;
+//                                 color: #131821;
+//                                 &:hover{
+//                                     color:#4066A5;
+//                                 }
+//                                 &:active{
+//                                     color: #233759;
+//                                 }
+//                             }
+//                         }
+//                     }
+//                 }
+//             }
+//             .break_line{
+//                 width: 400px;
+//                 height: 1px;
+//                 background: #E3E3E4;
+//                 margin-bottom: 50px;
+//                 margin-left: 140px;
+//             }
+//             .bottom-icons{
+//                 display: flex;
+//                 justify-content: space-between;
+//                 width: 244px;
+//                 height: 46px;
+//                 margin: 0 218px 243px;
+//                 a{
+//                     display: block;
+//                     width: 46px;
+//                     height: 100%;
+//                     border-radius: 50%;
+                
+//                     &:nth-child(1){
+//                         background: url('../img/icons/soc_net_icons/ic_facebook.svg') no-repeat 50% 50% #E2E3E4;
+//                         &:hover{
+//                             background: url('../img/icons/soc_net_icons/ic_facebook_w.svg') no-repeat 50% 50% #4267B2;
+//                         }
+//                         &:active{
+//                             background: url('../img/icons/soc_net_icons/ic_facebook_w.svg') no-repeat 50% 50% #2F4A80;
+//                         }
+                        
+//                     }
+//                     &:nth-child(2){
+//                         background: url('../img/icons/soc_net_icons/ic_instagram.svg') no-repeat 50% 50% #E2E3E4;
+//                         &:hover{
+//                             background: url('../img/icons/soc_net_icons/ic_instagram_w.svg') no-repeat 50% 50% #C13584;
+//                         }
+//                         &:active{
+//                             background: url('../img/icons/soc_net_icons/ic_instagram_w.svg') no-repeat 50% 50% #8F2762;
+//                         }
+//                     }
+//                     &:nth-child(3){
+//                         background: url('../img/icons/soc_net_icons/ic_twitter.svg') no-repeat 50% 50% #E2E3E4;
+//                         &:hover{
+//                             background: url('../img/icons/soc_net_icons/ic_twitter_w.svg') no-repeat 50% 50% #1DA1F2;
+//                         }
+//                         &:active{
+//                             background: url('../img/icons/soc_net_icons/ic_twitter_w.svg') no-repeat 50% 50% #177FBF;
+//                         }
+//                     }
+//                     &:nth-child(4){
+//                         background: url('../img/icons/soc_net_icons/ic_youtube.svg') no-repeat 50% 50% #E2E3E4;
+//                         &:hover{
+//                             background: url('../img/icons/soc_net_icons/ic_youtube_w.svg') no-repeat 50% 50% #FF0000;
+//                         }
+//                         &:active{
+//                             background: url('../img/icons/soc_net_icons/ic_youtube_w.svg') no-repeat 50% 50% #CC0000;
+//                         }
+//                     }
+//                 }
+//             }
+    
+//         }
+//         .left-image{
+//             display: none;
+//             width: 100%;
+//             // background: url('../img/image_summer.jpg') no-repeat;
+//             img{
+//                 width: 100%;
+//             }
+//         }
+//     }
+//     .subscription_success{
+//         display: none;
+//         width: 400px;
+//         margin: 130px 140px 50px;
+//         .icon_goblet{
+//             margin-bottom: 30px;
+//         }
+//         h1{
+//             font-family: Georgia, 'Times New Roman', Times, serif;
+//             font-size: 32px;
+//             line-height: 44px;
+//             color: #131821;
+//             margin-bottom: 20px;
+//         }
+//         p{
+//             line-height: 28px;
+//         }
+//     }    
+    
+}

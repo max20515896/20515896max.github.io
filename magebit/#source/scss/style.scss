@@ -1,0 +1,414 @@
+//reset browser style settings
+@import 'nullstyle.scss';
+
+// //media for different devices
+// @import 'mobile.scss';
+// @import 'desktop.scss';
+
+//function to get width from px to % from parentblock
+//also can be used to get margin, padding in % for exampel:
+//$childWidth = (margin we need in: px) / $parentWidth = (element container width) = (margin in %)
+@function widthPercent($childWidth, $parentWidth){
+    $result: 0;
+    @if $childWidth == 0 {
+        @return 0;
+    }
+    @return ($childWidth / $parentWidth) * 100%;
+}
+
+//getting all margins in %, if you dont need any just set it in 0;
+@mixin marginPercent($blockWidth, $mTop, $mRight, $mBottom, $mLeft){
+    margin-top: widthPercent($mTop, $blockWidth);
+    margin-right: widthPercent($mRight, $blockWidth);
+    margin-bottom: widthPercent($mBottom, $blockWidth);
+    margin-left: widthPercent($mLeft,$blockWidth);
+}
+
+    body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #6A707B;
+    }
+
+    .content {
+        display: flex;
+        width: 100%;
+        background: linear-gradient(180deg, #fff 0%, #f2f5fa 100%);
+   }
+    .content-right {
+        width: 35.4166666667%;
+   }
+    .content-right nav {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 14.7058823529%;
+        margin-right: 14.7058823529%;
+        margin-bottom: 0;
+        margin-left: 14.7058823529%;
+        width: 70.5882352941%;
+   }
+    .content-right nav .logo {
+        width: 30.4166666667%;
+        background: url('../img/icons/ic_pineapple.svg') no-repeat 0 0;
+   }
+    .content-right nav .logo img {
+        margin: 20px 0 4px 40px;
+   }
+    .content-right nav .links {
+        min-width: 249px;
+        font-size: 1em;
+   }
+    .content-right nav .links li {
+        display: inline-block;
+        margin: 14px 0 0 30px;
+   }
+    .content-right nav .links li:first-child {
+        margin-left: 0;
+   }
+    .content-right nav .links li a {
+        color: #6a707b;
+        line-height: 24px;
+   }
+    .content-right .info {
+        display: none;
+        position: relative;
+        width: 58.8235294118%;
+        margin-top: 34.4117647059%;
+        margin-right: 20.5882352941%;
+        margin-bottom: 36.9117647059%;
+        margin-left: 20.5882352941%;
+   }
+    .content-right .info .info-header h1 {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 2em;
+        line-height: 44px;
+        color: #131821;
+        margin-top: 0;
+        margin-right: 0;
+        margin-bottom: 3.75%;
+        margin-left: 0;
+   }
+    .content-right .info .info-header p {
+        line-height: 28px;
+   }
+    .content-right .info .form {
+        width: 165.75%;
+        position: absolute;
+        left: calc(-39 / 400 * 100%);
+        top: calc(165 / 115 * 100%);
+   }
+    .content-right .info .form .email {
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+   }
+    .content-right .info .form .email .border {
+        width: 4px;
+        background-color: #4066a5;
+   }
+    .content-right .info .form .email input[type=text] {
+        display: block;
+        width: 100%;
+        height: 70px;
+        padding-left: 6.0331825038%;
+        background: url('../img/icons/ic_arrow.svg') no-repeat 94% 50%;
+        border-top: 1px solid #e3e3e4;
+        border-right: 1px solid #e3e3e4;
+        border-bottom: 1px solid #e3e3e4;
+   }
+    .content-right .info .form .email input[type=text]::placeholder {
+        line-height: 24px;
+        font-size: 16px;
+   }
+    .content-right .info .form .email input[type=text]:focus {
+        border: 1px solid #4066a5;
+        background: url('../img/icons/ic_arrow_focus.svg') no-repeat 94% 50%;
+   }
+    .content-right .info .form .email input[type=submit] {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: calc(579 / 663 * 100%);
+        width: 83px;
+        height: 100%;
+        cursor: pointer;
+        background-color: transparent;
+   }
+    .content-right .info .form .error {
+        position: absolute;
+        top: 75px;
+        left: 0;
+        color: #c00;
+   }
+    .content-right .info .form-checkbox {
+        margin-top: 18.7028657617%;
+        margin-right: 0;
+        margin-bottom: 0;
+        margin-left: 5.4298642534%;
+   }
+    .content-right .info .form-checkbox input[type=checkbox] {
+        vertical-align: top;
+        margin-top: 1px;
+        margin-right: 15px;
+        width: 26px;
+        height: 26px;
+   }
+    .content-right .info .form-checkbox span {
+        vertical-align: middle;
+        line-height: 28px;
+   }
+    .content-right .info .form-checkbox span a {
+        text-decoration: underline;
+        color: #131821;
+   }
+    .content-right .info .form-checkbox span a:hover {
+        color: #4066a5;
+   }
+    .content-right .info .form-checkbox span a:active {
+        color: #233759;
+   }
+    .content-right .break_line {
+        width: 58.8235294118%;
+        height: 1px;
+        background: #e3e3e4;
+        margin-top: 0;
+        margin-right: 0;
+        margin-bottom: 7.3529411765%;
+        margin-left: 20.5882352941%;
+   }
+    .content-right .bottom-icons {
+        display: flex;
+        justify-content: space-between;
+        width: 35.8823529412%;
+        margin-top: 0;
+        margin-right: 32.0588235294%;
+        margin-bottom: 35.7352941176%;
+        margin-left: 32.0588235294%;
+   }
+    .content-right .bottom-icons a {
+        display: block;
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+   }
+    .content-right .bottom-icons a:nth-child(1) {
+        background: url('../img/icons/soc_net_icons/ic_facebook.svg') no-repeat 50% 50% #e2e3e4;
+   }
+    .content-right .bottom-icons a:nth-child(1):hover {
+        background: url('../img/icons/soc_net_icons/ic_facebook_w.svg') no-repeat 50% 50% #4267b2;
+   }
+    .content-right .bottom-icons a:nth-child(1):active {
+        background: url('../img/icons/soc_net_icons/ic_facebook_w.svg') no-repeat 50% 50% #2f4a80;
+   }
+    .content-right .bottom-icons a:nth-child(2) {
+        background: url('../img/icons/soc_net_icons/ic_instagram.svg') no-repeat 50% 50% #e2e3e4;
+   }
+    .content-right .bottom-icons a:nth-child(2):hover {
+        background: url('../img/icons/soc_net_icons/ic_instagram_w.svg') no-repeat 50% 50% #c13584;
+   }
+    .content-right .bottom-icons a:nth-child(2):active {
+        background: url('../img/icons/soc_net_icons/ic_instagram_w.svg') no-repeat 50% 50% #8f2762;
+   }
+    .content-right .bottom-icons a:nth-child(3) {
+        background: url('../img/icons/soc_net_icons/ic_twitter.svg') no-repeat 50% 50% #e2e3e4;
+   }
+    .content-right .bottom-icons a:nth-child(3):hover {
+        background: url('../img/icons/soc_net_icons/ic_twitter_w.svg') no-repeat 50% 50% #1da1f2;
+   }
+    .content-right .bottom-icons a:nth-child(3):active {
+        background: url('../img/icons/soc_net_icons/ic_twitter_w.svg') no-repeat 50% 50% #177fbf;
+   }
+    .content-right .bottom-icons a:nth-child(4) {
+        background: url('../img/icons/soc_net_icons/ic_youtube.svg') no-repeat 50% 50% #e2e3e4;
+   }
+    .content-right .bottom-icons a:nth-child(4):hover {
+        background: url('../img/icons/soc_net_icons/ic_youtube_w.svg') no-repeat 50% 50% #f00;
+   }
+    .content-right .bottom-icons a:nth-child(4):active {
+        background: url('../img/icons/soc_net_icons/ic_youtube_w.svg') no-repeat 50% 50% #c00;
+   }
+    .content .left-image {
+        width: 64.5833333333%;
+   }
+    .content .left-image img {
+        max-width: 100%;
+        min-height: 100%;
+   }
+    .subscription_success {
+        display: block;
+        width: 400px;
+        margin: 130px 140px 50px;
+   }
+    .subscription_success .icon_goblet {
+        margin-bottom: 30px;
+   }
+    .subscription_success h1 {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 2em;
+        line-height: 44px;
+        color: #131821;
+        margin-bottom: 20px;
+   }
+    .subscription_success p {
+        line-height: 28px;
+   }
+
+    @media screen and (max-width: 1580px){
+
+        .content-right nav {
+            width: 100%;
+            @include marginPercent(680, 100, 0, 0, 0);
+            padding: 5px;
+       }
+       .content-right .info {
+            width: widthPercent(460, 559);
+            @include marginPercent(680, 234, 50, 400, 50);
+        }
+        .content-right .info .info-header h1 {
+            font-size: 1.5em;
+       }
+       .content-right .info .form {
+            width: 130%;
+            left: 1%;
+        }
+        .content-right .info .form .email input[type=submit] {
+            left: 86%;
+            width: widthPercent(83, 598.61);
+       }
+       .content-right .info .form-checkbox {
+            @include marginPercent(663, 150, 0, 0, 36);
+        }
+        .content-right .bottom-icons {
+            @include marginPercent(680,100, 218, 100, 218);
+        }
+        .subscription_success {
+            margin: 130px auto 50px;
+            padding: 5px;
+       }
+    }
+
+    @media screen and (max-width: 1100px){
+
+        .content-right nav {
+            background: url('../img/icons/ic_pineapple.svg') no-repeat 0 0;
+       }
+       .content-right nav .logo {
+            display: none;
+        }
+        .content-right nav .links{
+            margin-left: 10%;
+            text-align: center;
+        }
+        .content-right .info{
+            margin-top: 20%;
+            margin-bottom: 60%;
+        }
+        .content-right .info .form .email input[type=text] {
+            height: 60px;
+        }
+        .content-right .info .form-checkbox {
+            margin-top: 30%;
+        }
+        .content-right .bottom-icons{
+            width: 80%;
+            margin: 20% auto;
+        }
+        .subscription_success {
+            display: block;
+            width: 100%;
+            margin: 130px auto 0;
+       }
+    }
+
+    @media screen and (max-width: 875px){
+
+        body{
+            font-size: 14px;
+        }
+
+        .content{
+            height: 100%;
+            background: url('../img/image_summer.png') no-repeat 0 0;
+        }
+        .content-right{
+            min-width: 345px;
+            // max-height: 485px;
+            height: min-content;
+            background-color: #fff;
+            margin: 20% auto 0;
+            width: 40%;
+        }
+        .content-right nav {
+            background: url('../img/icons/ic_pineapple.svg') no-repeat 0 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 0;
+            background-color: #fff;
+            width: 100%;
+       }
+       .content-right nav .logo {
+
+        }
+        .content-right nav .links{
+            width: 30%;
+            margin: 0 0 0 auto;
+            text-align: center;
+            float: right;
+        }
+        .content-right .info{
+            width: widthPercent(460, 559);
+            margin-top: 5%;
+            margin-bottom: 50%;
+        }
+        .content-right .info .form{
+            width: 90%;
+        }
+        .content-right .info .form .email input[type=text]::placeholder{
+            font-size: 14px;
+        }
+        .content-right .info .form-checkbox {
+            margin-top: 35%;
+        }
+        .content-right .info .form .error {
+            top: 60px;
+        }
+        .content-right .bottom-icons{
+            margin: 10% auto;
+        }
+        .content .left-image{
+            display: none;
+        }
+        .subscription_success {
+            margin-top: 50px;
+       }
+    
+    }
+
+    @media screen and (max-width: 375px){
+
+        .content{
+            background: url('../img/image_summer_mob.png') no-repeat 0 0;
+        }
+        .content-right{
+            min-width: 335px;
+            margin: 188px auto 0;
+            padding: 30px 20px;
+        }
+        .content-right .info{
+            width: 335px;
+            margin: 0 auto 60%;
+        }
+        .content-right .info .info-header{
+            width: 80%;
+        }
+        .content-right .bottom-icons{
+            margin: 0 auto;
+        }
+        .subscription_success {
+            margin-top: 0;
+       }
+    }
