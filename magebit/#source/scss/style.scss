@@ -70,7 +70,6 @@
         line-height: 24px;
    }
     .content-right .info {
-        display: none;
         position: relative;
         width: 58.8235294118%;
         margin-top: 34.4117647059%;
@@ -238,7 +237,7 @@
         min-height: 100%;
    }
     .subscription_success {
-        display: block;
+        display: none;
         width: 400px;
         margin: 130px 140px 50px;
    }
@@ -317,7 +316,6 @@
             margin: 20% auto;
         }
         .subscription_success {
-            display: block;
             width: 100%;
             margin: 130px auto 0;
        }

@@ -1,5 +1,6 @@
 <?php
     include_once 'config/database.php';
+    include_once 'config/database_data.php';
 
     // create var and set empty
     $email = $agreement = "";
@@ -27,8 +28,7 @@
             }
 
             if(!$Error){
-                $db = new Database('localhost', 'root', 'root', 'magebit_email');
-                // $dataSavedMessage = $db->save('emails', $email);
+                $db = new Database($host, $user, $password, $database);
                 $db->save('email', $email);
                 header('Location: showData.php');
                 exit;
@@ -59,9 +59,6 @@
     <div class="content-right">
         <nav>
             <div class="logo">
-                <!-- <div class="logo-icon"><img src="img/icons/ic_pineapple.svg" alt="pineapple logo"></div> -->
-                <!-- <div class="logo-icon"></div> -->
-                <!-- <div class="logo-text"><img src="img/icons/ic_pineapple_text..svg" alt="pineapple text"></div> -->
                 <img src="img/icons/ic_pineapple_text..svg" alt="pineapple text">
             </div>
             <ul class="links">

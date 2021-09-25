@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,10 +10,17 @@
 <div class="dataList">
 <?php
         include_once 'config/database.php';
+        include_once 'config/database_data.php';
 
-        $db = new Database('localhost', 'root', 'root', 'magebit_email');
+        $db = new Database($host, $user, $password, $database);
 
-            $isPostOrderBy = false;
+            // if delete button is pressed
+                if(isset($_POST['delete'])){
+                    $id = $_POST['itemId'];
+                    $db->deleteById($id);
+                    $db = new Database($host, $user, $password, $database);
+                }
+
             $orderByBtnValueKey = array(
                 'A-z'=>'ORDER BY email ASC', 
                 'Z-a'=>'ORDER BY email DESC', 
@@ -50,7 +56,6 @@
                     $result = $db->selectAllByCondition($query);
                     $db->createTable($result);
                 }
-
 ?>
 </div>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">
@@ -64,11 +69,12 @@
 
         <div><b>Sort by domain: </b></div>
 
-        <?php 
+        <?php
             $query = 'SELECT email FROM email';
             $result = $db->selectAllByCondition($query);
 
         //create simple email array
+        if($result){
             $emailArr = [];
             $key = new \stdClass();
             foreach($result as $key->$value){
@@ -79,6 +85,7 @@
 
             //create html elements: select, options
             $db->createSelectList($domains);
+        }
         ?>
     </form>
 </body>

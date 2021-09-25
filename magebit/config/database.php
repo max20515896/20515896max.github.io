@@ -5,7 +5,7 @@ class Database{
     
     public function __construct($host, $user, $password, $database)
     {
-        $this->link = mysqli_connect($host, $user, $password, $database);
+        $this->link = new mysqli($host, $user, $password, $database);
         mysqli_query($this->link, "SET NAMES 'utf8'");
     }
     
@@ -22,33 +22,8 @@ class Database{
           $this->link->close();
     }
     
-    public function del($table, $id)
-    {
-        // удаляет запись по ее id
-    }
-    
-    public function delAll($table, $ids)
-    {
-        // удаляет записи по их id
-    }
-    
-    public function get($table, $id)
-    {
-        // получает одну запись по ее id
-    }
-    
-    public function getAll($table, $ids)
-    {
-        // получает массив записей по их id
-    }
-    
-    // public function selectAll($table, $condition)
-    // {
-    //     // получает массив записей по условию
-    // }
     public function selectAllByCondition($query)
     {
-        // получает массив записей по условию
         $result = $this->link->query($query);
 
         if($result->num_rows > 0){
@@ -59,11 +34,15 @@ class Database{
           
           $this->link->close();
     }
-    
+    public function deleteById($id)
+    {
+        $this->link->query("DELETE from email WHERE id = $id");
+          
+          $this->link->close();
+    }
     public function createTable($data)
     {
         // creating html table 
-        
         if($data){
             echo "<table>";
                 foreach($data as $row){
@@ -71,13 +50,13 @@ class Database{
                     echo "<td>".$row["id"]."</td>";
                     echo "<td>".$row["email"]."</td>";
                     echo "<td>".$row["date"]."</td>";
+                    echo "<td><form method='post' action='".$_SERVER["PHP_SELF"]."'><input type='hidden'  value='".$row["id"]."' name='itemId'><input type='submit'  value='delete' name='delete'></form></td>";
                     echo "</tr>";
                 }
             echo "<table>";
         }else{
             echo '0 results';
         }
-
     }
     public function createSelectList($domains){
         echo '<select name="domain" id="domain_list">';
